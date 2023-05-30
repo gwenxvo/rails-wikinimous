@@ -1,0 +1,14 @@
+<div class='my-navbar'>
+  <%= link_to 'Wikinimous', articles_path, class: 'nb-links', id: 'main' %>
+  <%= link_to 'New Article', new_article_path, class: 'nb-links' %>
+</div>
+
+<div class="container-small">
+  <ul class="ul-all">
+    <% @articles.each do |article| %>
+      <li><%= link_to article.title, article_path(article), class: 'li-title' %><br>
+      <%= article.content %>
+      </li>
+    <% end %>
+  </ul>
+</div>

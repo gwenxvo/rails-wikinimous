@@ -1,0 +1,18 @@
+<div class='my-navbar'>
+  <%= link_to 'Wikinimous', articles_path, class: 'nb-links', id: 'main' %>
+  <%= link_to 'New Article', new_article_path, class: 'nb-links' %>
+</div>
+
+<div class='container-small'>
+  <div class='title'>
+    <h1><%= @article.title %></h1>
+    <%= link_to edit_article_path do %>
+    <i class="fa-solid fa-pencil"></i>
+    <% end %>
+    <%= link_to '<i class="fa-solid fa-trash-can icon"></i>'.html_safe, article_path(@article),
+        data: {turbo_method: :delete,
+        turbo_confirm: "Are you sure?"} %><br>
+    </div>
+
+  <div class='content'><%= @article.content %></div>
+</div>
